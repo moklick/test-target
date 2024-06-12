@@ -11,4 +11,5 @@ jobs:
     #    if: ${{ !github.event.client_payload.passed }}
     runs-on: ubuntu-latest
     steps:
-      run: echo ${{ github.event.client_payload.message }}
+      - name: print message
+        run: echo ${{ github.event.client_payload.message }}
