@@ -1,0 +1,14 @@
+name: Version Update
+
+on:
+  repository_dispatch:
+    types: [version_update]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  log_message:
+    #    if: ${{ !github.event.client_payload.passed }}
+    runs-on: ubuntu-latest
+    steps:
+      run: echo ${{ github.event.client_payload.message }}
