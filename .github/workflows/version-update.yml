@@ -4,6 +4,10 @@ on:
   repository_dispatch:
     types: [version_update]
   workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message to log'
+        type: string
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
