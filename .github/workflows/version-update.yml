@@ -3,6 +3,7 @@ name: Version update
 on:
   repository_dispatch:
     types: [version_update]
+  workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
